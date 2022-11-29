@@ -1,0 +1,42 @@
+{
+  "name": "aws-banking",
+  "version": "1.0.0",
+  "description": "banking app deployed on aws using nodejs, react, mysql, express",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vikramsingh13/aws-banking.git"
+  },
+  "keywords": [
+    "aws",
+    "nodejs",
+    "reactjs",
+    "mysql",
+    "express",
+    "bcryptjs",
+    "jwt"
+  ],
+  "author": "Vikram Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vikramsingh13/aws-banking/issues"
+  },
+  "homepage": "https://github.com/vikramsingh13/aws-banking#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-async-handler": "^1.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
