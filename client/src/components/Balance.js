@@ -7,7 +7,7 @@ const Balance = (props) => {
 
     const handleSubmit = async(e) => {
         e.preventDefault();
-        const res = await Backend.post('/accounts/getAccount',{
+        const res = await Backend.get('/accounts/getAccount',{
             accountId: id
         }).catch(err =>{
             console.log(err.message);
