@@ -3,12 +3,13 @@ const dotenv = require('dotenv').config;
 const cors = require('cors');
 const path = require('path');
 const {errorHandler} = require('./middlewares/errorMiddleware');
-const {connectDB} = require('./config/db');
+const {connectDB, createTable} = require('./config/db');
 
 const port = process.env.PORT || 3001;
 
 //connecting to mysql db server
 connectDB();
+createTable();
 
 const app = express();
 app.use(express.json());

@@ -2,10 +2,10 @@ const mysql = require('mysql');
 
 const connection = mysql.createConnection({
     host: process.env.DB_ENDPOINT || 'banking.cjj6obi0v9gt.us-east-1.rds.amazonaws.com',
-    port: process.env.DB_PORT || '3001',
+    port: process.env.DB_PORT || '3306',
     user: process.env.DB_USER || 'admin',
     password: process.env.DB_PASSWORD || 'an_admin',
-    database: process.env.DB_NAME || 'banking'
+    database: process.env.DB_NAME || 'Banking'
 });
 
 const connectDB = async() => {
@@ -18,4 +18,17 @@ const connectDB = async() => {
     });
 }
 
-module.exports = {connectDB};
+const createTable = async() => {
+    const sql = 'create or replace table accounts (id int auto_increment primary key, ' +
+        'username varchar(255), password varchar(255), account_type varchar(255), ' +
+        'first_name varchar(255), last_name varchar(255), balance int(10,2)';
+    await connection.query(sql, (err, result) => {
+        if(err){
+            console.log(`Table creation error: ${err.message}`);
+        } else{
+            console.log(`Table creation result: ${result}`);
+        }
+    });
+};
+
+module.exports = {connectDB, createTable};
