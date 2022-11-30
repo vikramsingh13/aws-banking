@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
+import Backend from '../apis/Backend';
 
 const Balance = (props) => {
     const [id, setId] = useState('');
+    const [response, setResponse] = useState([]);
 
     const handleSubmit = async(e) => {
         e.preventDefault();

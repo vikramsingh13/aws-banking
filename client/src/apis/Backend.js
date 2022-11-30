@@ -8,5 +8,5 @@ export default axios.create({
 */
 
 export default axios.create({
-    baseURL: 'http://3.212.133.69:3001'
-})
+    baseURL: 'http://3.212.133.69:3001',
+});

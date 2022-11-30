@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
+import Backend from '../apis/Backend';
 
 const Transactions = (props) => {
     const [type, setType] = useState('deposit');
     const [amount, setAmount] = useState('');
     const [id, setId] = useState('');
+    const [response, setResponse] = useState([]);
 
     const handleSubmit = async(e) => {
         e.preventDefault();
