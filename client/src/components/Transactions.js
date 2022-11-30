@@ -5,8 +5,17 @@ const Transactions = (props) => {
     const [amount, setAmount] = useState('');
     const [id, setId] = useState('');
 
-    const handleSubmit = (e) =>{
+    const handleSubmit = async(e) => {
         e.preventDefault();
+        const res = await Backend.post('/accounts/doTransaction',{
+            accountId: id,
+            transactionType: type,
+            transactionAmount: amount
+        }).catch(err =>{
+            console.log(err.message);
+        });
+        setResponse(res);
+        console.log(res);
     }
 
     return(

@@ -1,12 +1,14 @@
 const mysql = require('mysql');
 
-/*const connection = mysql.createConnection({
+const connection = mysql.createConnection({
     host: process.env.DB_ENDPOINT || 'banking.cjj6obi0v9gt.us-east-1.rds.amazonaws.com',
     port: process.env.DB_PORT || '3306',
     user: process.env.DB_USER || 'admin',
     password: process.env.DB_PASSWORD || 'an_admin',
     database: process.env.DB_NAME || 'Banking'
-});*/
+});
+
+/*
 
 const connection = mysql.createConnection({
     host: 'localhost',
@@ -15,6 +17,7 @@ const connection = mysql.createConnection({
     password: 'admin',
     database: 'Banking'
 });
+*/
 
 
 const connectDB = async() => {

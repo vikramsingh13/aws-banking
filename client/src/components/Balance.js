@@ -3,8 +3,15 @@ import React, {useState} from 'react';
 const Balance = (props) => {
     const [id, setId] = useState('');
 
-    const handleSubmit = (e) =>{
+    const handleSubmit = async(e) => {
         e.preventDefault();
+        const res = await Backend.post('/accounts/getAccount',{
+            accountId: id
+        }).catch(err =>{
+            console.log(err.message);
+        });
+        setResponse(res);
+        console.log(res);
     }
 
     return(
