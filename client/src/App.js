@@ -8,6 +8,7 @@ const App = () => {
     
     return(
         <div className='app'>
+            <div className='app-title'>Bezos Bank</div>
             <AddAccount />
             <Transactions />
             <Balance />

@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import Backend from '../apis/Backend';
 
 const AddAccount = (props) => {
     const [username, setUsername] = useState('');
@@ -7,9 +8,22 @@ const AddAccount = (props) => {
     const [accountType, setAccountType] = useState('checking');
     const [password, setPassword] = useState('');
     const [balance, setBalance] = useState('');
+    const [response, setResponse] = useState({});
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault();
+        const res = await Backend.post('/accounts/addAccount',{
+            username,
+            firstName,
+            lastName,
+            accountType,
+            password,
+            balance
+        }).catch(err =>{
+            console.log(err.message);
+        });
+        setResponse(res);
+        console.log(res);
     }
 
     return (
@@ -42,6 +56,8 @@ const AddAccount = (props) => {
                     onClick={(e) => handleSubmit(e)}
                 >Add Account</button> 
             </form>
+
+            <p></p>
         </div>
     );
 }
