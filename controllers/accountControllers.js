@@ -23,14 +23,13 @@ const addAccount = asyncHandler(async(req, res) => {
 
     balance = parseFloat(balance);
 
-    if(!username || !firstName || !lastName || !accountType || !password || !balance){
+    if(!username || !firstName || !lastName || !accountType || !password || !balance || isNaN(balance) || balance > ((2**31) -1) || balance < 0){
         res.status(400); //bad request
         throw new Error('Please add valid username, firstName, lastName, accountType, password, balance');
     } else if(typeof balance !== 'number'){
         res.status(400);
         throw new Error('Balance must be a number.');
     }
-
     let post = {
         username,
         firstName,
@@ -91,7 +90,7 @@ const doTransaction = asyncHandler(async(req, res) => {
 
     transactionAmount = parseFloat(transactionAmount);
 
-    if(!accountId || !transactionType || !transactionAmount){
+    if(!accountId || !transactionType || !transactionAmount || transactionAmount <= 0){
         res.status(400);
         throw new Error('Please add valid accountId, transactionType, transactionAmount');
     } else if(transactionType.toLowerCase() !== "withdraw" && transactionType.toLowerCase() !== 'deposit'){

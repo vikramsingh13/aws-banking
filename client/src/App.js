@@ -13,8 +13,8 @@ const App = () => {
         <div className='app'>
             <NavBar setTab={setTab} />
             {
-                tab === 1 ? <Home /> : tab === 2 ? <AddAccount /> : 
-                tab === 3 ? <Transactions /> : tab === 4 ? <Balance /> : <Home />
+                tab === 1 ? <Home setTab={setTab}/> : tab === 2 ? <AddAccount /> : 
+                tab === 3 ? <Transactions /> : tab === 4 ? <Balance /> : <Home setTab={setTab}/>
             }
         </div>
     );
