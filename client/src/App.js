@@ -2,16 +2,20 @@ import React, {useState} from 'react';
 import AddAccount from './components/AddAccount';
 import Transactions from './components/Transactions';
 import Balance from './components/Balance';
+import NavBar from './components/NavBar';
+import Home from './components/Home';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
-    let {tab, setTab} = useState('');
-    
+    let [tab, setTab] = useState(1);
+
     return(
         <div className='app'>
-            <div className='app-title'>Bezos Bank</div>
-            <AddAccount />
-            <Transactions />
-            <Balance />
+            <NavBar setTab={setTab} />
+            {
+                tab === 1 ? <Home /> : tab === 2 ? <AddAccount /> : 
+                tab === 3 ? <Transactions /> : tab === 4 ? <Balance /> : <Home />
+            }
         </div>
     );
 };

@@ -58,7 +58,6 @@ const addAccount = asyncHandler(async(req, res) => {
 //@description retrieves account row from accounts table
 //@access public
 const getAccount = asyncHandler(async(req, res) => {
-    console.log(req);
     let accountId = parseInt(req.query.accountId);
     if(!accountId){
         res.status(400);

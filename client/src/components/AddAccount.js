@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import Backend from '../apis/Backend';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 const AddAccount = (props) => {
     const [username, setUsername] = useState('');
@@ -27,38 +29,48 @@ const AddAccount = (props) => {
     }
 
     return (
-        <div className='add-account'>
-            <h3>Add Account</h3>
-            <form className='add-account-form'>
-                <label>Username:</label>
-                <input type='text' value={username} onChange={(e)=>setUsername(e.target.value)}
-                /><br />
-                <label>Password</label>
-                <input type='password' value={password} onChange={(e)=>setPassword(e.target.value)}
-                /><br />
-                <label>First name:</label>
-                <input type='text' value={firstName} onChange={(e)=>setFirstName(e.target.value)}
-                /><br />
-                <label>Last name:</label>
-                <input type='text' value={lastName} onChange={(e)=>setLastName(e.target.value)}
-                /><br />
-                <label>Account type:</label>
-                <select type='text' value={accountType} onChange={(e)=>setAccountType(e.target.value)}>
+        <Form className='add-account w-50 container align-items-center justify-content-center'>
+            <h3 className="text-center">Add Account</h3>
+            <Form.Group className='add-account-form mb3'>
+                <Form.Label>Username:</Form.Label>
+                <Form.Control type='text' value={username} onChange={(e)=>setUsername(e.target.value)} required="true"
+                />
+            </Form.Group>
+            <Form.Group>
+                <Form.Label>Password</Form.Label>
+                <Form.Control type='password' value={password} onChange={(e)=>setPassword(e.target.value)} required="true"
+                />
+            </Form.Group>
+            <Form.Group>
+                <Form.Label>First name:</Form.Label>
+                <Form.Control type='text' value={firstName} onChange={(e)=>setFirstName(e.target.value)} required="true"
+                />
+            </Form.Group>
+            <Form.Group>
+                <Form.Label>Last name:</Form.Label>
+                <Form.Control type='text' value={lastName} onChange={(e)=>setLastName(e.target.value)} required="true"
+                />
+            </Form.Group>
+            <Form.Group>
+                <Form.Label>Account type:</Form.Label>
+                <Form.Select type='text' value={accountType} onChange={(e)=>setAccountType(e.target.value)} required="true">
                     <option value="checking">Checking</option>
                     <option value="savings">Savings</option>
-                </select><br />
-                <label>Balance:</label>
-                <input type='text' value={balance} onChange={(e)=>setBalance(e.target.value)}
-                /><br />
-
-                <button 
-                    type="submit"
-                    onClick={(e) => handleSubmit(e)}
-                >Add Account</button> 
-            </form>
-
-            <p></p>
-        </div>
+                </Form.Select>
+            </Form.Group>
+            <Form.Group>
+                <Form.Label>Balance:</Form.Label>
+                <Form.Control type='text' value={balance} onChange={(e)=>setBalance(e.target.value)} required="true"
+                />
+            </Form.Group>
+            <br />
+            <Button 
+                variant="primary" 
+                type="submit"
+                onClick={(e) => handleSubmit(e)}
+                className="w-100"
+            >Add Account</Button> 
+        </Form>
     );
 }
 
