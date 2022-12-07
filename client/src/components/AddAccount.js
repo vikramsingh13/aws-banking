@@ -8,7 +8,7 @@ const AddAccount = (props) => {
     const [accountType, setAccountType] = useState('checking');
     const [password, setPassword] = useState('');
     const [balance, setBalance] = useState('');
-    const [response, setResponse] = useState({});
+    const [response, setResponse] = useState([]);
 
     const handleSubmit = async(e) => {
         e.preventDefault();
@@ -23,7 +23,7 @@ const AddAccount = (props) => {
             console.log(err.message);
         });
         setResponse(res);
-        console.log(res);
+        console.log(res, res.length);
     }
 
     return (

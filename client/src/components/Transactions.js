@@ -1,18 +1,29 @@
 import React, {useState} from 'react';
+import Backend from '../apis/Backend';
 
 const Transactions = (props) => {
     const [type, setType] = useState('deposit');
     const [amount, setAmount] = useState('');
     const [id, setId] = useState('');
+    const [response, setResponse] = useState([])
 
-    const handleSubmit = (e) =>{
+    const handleSubmit = async(e) =>{
         e.preventDefault();
+        const res = await Backend.post('/accounts/doTransaction', {
+            accountId: id,
+            transactionType: type,
+            transactionAmount: amount
+        }).catch(err => {
+            console.log(err.message);
+        });
+        setResponse(res);
+        console.log(res.data);
     }
 
     return(
         <div className='transactions'>
             <h3>Deposit/withdraw</h3>
-            <form className='add-account-form'>
+            <form className='do-transaction-form'>
                 <label>Account id:</label>
                 <input type='text' value={id} onChange={(e)=>setId(e.target.value)}
                 /><br />

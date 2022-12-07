@@ -58,8 +58,8 @@ const addAccount = asyncHandler(async(req, res) => {
 //@description retrieves account row from accounts table
 //@access public
 const getAccount = asyncHandler(async(req, res) => {
-    let { accountId } = req.body;
-    accountId = parseInt(accountId);
+    console.log(req);
+    let accountId = parseInt(req.query.accountId);
     if(!accountId){
         res.status(400);
         throw new Error('Please use a valid accountId.');
