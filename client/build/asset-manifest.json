@@ -1,5 +1,6 @@
 {
   "files": {
+<<<<<<< HEAD
     "main.css": "/static/css/main.c2cab247.css",
     "main.js": "/static/js/main.faaee2f0.js",
     "static/media/header.jpg": "/static/media/header.3449355d5d2d40953523.jpg",
@@ -10,5 +11,13 @@
   "entrypoints": [
     "static/css/main.c2cab247.css",
     "static/js/main.faaee2f0.js"
+=======
+    "main.js": "/static/js/main.2d915885.js",
+    "index.html": "/index.html",
+    "main.2d915885.js.map": "/static/js/main.2d915885.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.2d915885.js"
+>>>>>>> 71399c0e3ee593f8e5b54a82b0e7f32fc7121ea0
   ]
 }
