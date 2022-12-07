@@ -1,12 +1,9 @@
-<<<<<<< HEAD:client/build/static/js/main.faaee2f0.js.LICENSE.txt
 /*!
 	Copyright (c) 2018 Jed Watson.
 	Licensed under the MIT License (MIT), see
 	http://jedwatson.github.io/classnames
 */
 
-=======
->>>>>>> 71399c0e3ee593f8e5b54a82b0e7f32fc7121ea0:client/build/static/js/main.2d915885.js.LICENSE.txt
 /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */
 
 /**
