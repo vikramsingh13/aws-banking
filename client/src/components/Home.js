@@ -4,18 +4,20 @@ import Button from 'react-bootstrap/Button';
 
 const Home = ({setTab}) => {
     return (
-        <div>
+        <div className='container d-flex flex-column gap-3 text-center align-items-center justify-content-center'>
             <Image 
                 src={require("../assets/header.jpg")} fluid
                 className="rounded mx-auto d-block"
 
             />
             <br />
-            <h3 className="w-50 text-align-center container align-items-center justify-content-center">
+            <h3 className="">
                 You're Poorer Than You Think!</h3>
             <br />
             <br />
-            <div className="ms-auto w-50 container align-items-center justify-content-center">
+            <br />
+            <br />
+            <div className="">
                 <Button id='1' href="#" onClick={(e) => setTab(parseInt(e.target.id))}>Home</Button>&nbsp;
                 <Button id='2' href="#" onClick={(e) => setTab(parseInt(e.target.id))}>Add Account</Button>&nbsp;
                 <Button id='3' href="#" onClick={(e) => setTab(parseInt(e.target.id))}>Transactions</Button>&nbsp;
