@@ -1,16 +1,12 @@
 import React, {useState} from 'react';
 import Backend from '../apis/Backend';
-<<<<<<< HEAD
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import ListGroup from 'react-bootstrap/ListGroup';
-=======
->>>>>>> 71399c0e3ee593f8e5b54a82b0e7f32fc7121ea0
 
 const Balance = (props) => {
     const [id, setId] = useState('');
     const [response, setResponse] = useState([]);
-<<<<<<< HEAD
     const [message, setMessage] = useState('');
 
     const handleSubmit = async(e) =>{
@@ -32,18 +28,6 @@ const Balance = (props) => {
             setMessage('We found following account details:')
             setResponse(res.data[0]);
         }
-=======
-
-    const handleSubmit = async(e) => {
-        e.preventDefault();
-        const res = await Backend.get('/accounts/getAccount',{
-            accountId: id
-        }).catch(err =>{
-            console.log(err.message);
-        });
-        setResponse(res);
-        console.log(res);
->>>>>>> 71399c0e3ee593f8e5b54a82b0e7f32fc7121ea0
     }
 
     return(
